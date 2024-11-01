@@ -1,6 +1,6 @@
-module github.com/gofiber/swagger
+module github.com/saveblush/gofiber3-swagger
 
-go 1.21
+go 1.23.1
 
 require (
 	github.com/gofiber/fiber/v3 v3.0.0-beta.2
