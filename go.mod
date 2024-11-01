@@ -4,7 +4,6 @@ go 1.21
 
 require (
 	github.com/gofiber/fiber/v3 v3.0.0-beta.2
-	github.com/swaggo/files/v2 v2.0.1
 	github.com/swaggo/swag v1.16.4
 )
 

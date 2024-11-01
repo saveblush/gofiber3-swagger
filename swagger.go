@@ -8,8 +8,6 @@ import (
 	"sync"
 
 	"github.com/gofiber/fiber/v3"
-	"github.com/gofiber/fiber/v3/middleware/filesystem"
-	swaggerFiles "github.com/swaggo/files/v2"
 	"github.com/swaggo/swag"
 )
 
@@ -32,7 +30,6 @@ func New(config ...Config) fiber.Handler {
 	var (
 		prefix string
 		once   sync.Once
-		fs     = filesystem.New(filesystem.Config{Root: swaggerFiles.FS})
 	)
 
 	return func(c fiber.Ctx) error {
@@ -68,7 +65,7 @@ func New(config ...Config) fiber.Handler {
 		case "", "/":
 			return c.Redirect().Status(fiber.StatusMovedPermanently).To(path.Join(prefix, defaultIndex))
 		default:
-			return fs(c)
+			return c.SendStatus(fiber.StatusNotFound)
 		}
 	}
 }
