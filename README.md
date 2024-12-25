@@ -23,7 +23,7 @@ swag init
 ```
 4. Download [swagger](https://github.com/saveblush/gofiber3-swagger) by using:
 ```sh
-go get -u github.com/saveblush/gofiber3-swagger@v0.1.0
+go get -u github.com/saveblush/gofiber3-swagger@v1.0.6
 ```
 And import following in your code:
 
